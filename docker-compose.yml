@@ -1,0 +1,15 @@
+version: "3.9"
+services:
+  app-facturas:
+    build: .
+    ports:
+      - "3000:3000"
+    links:
+      - dbmongo2
+  dbmongo2:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=subgrupo26
+      - MONGO_INITDB_ROOT_PASSWORD=1989
